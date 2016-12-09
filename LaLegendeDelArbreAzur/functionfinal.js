@@ -1,3 +1,4 @@
+
 /* Fonction permettant l'affichage du fond de la carte */
 function dessinerCarte(){	
 	ctx.drawImage(carte, 0, 0, 960, 640);
