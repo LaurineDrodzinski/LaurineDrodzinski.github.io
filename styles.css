@@ -1,0 +1,122 @@
+body{
+    background: url("imagesIndex/fond.jpg") fixed no-repeat;
+    background-size: 100% 100%;
+}
+
+div{
+    min-width:500px;
+    min-height:360px;
+    background-color: white;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 0;
+    position: absolute;
+    text-align:center;
+    width:700px;
+    height:40%;
+    padding:10px;
+    border-radius: 15px;
+    border: 10px ridge #F15C44;
+    margin: auto;
+    box-shadow: 0px 0px 20px black inset;
+}
+
+a{
+    color:black;
+    text-decoration: none;
+}
+
+p{
+    background-color: #FFDBC4;
+    padding-top:10px;
+    padding-bottom:10px;
+    padding-left:5px;
+    padding-right:5px;
+    width:500px;
+    margin-left: auto;
+    margin-right: auto;
+    border-radius: 15px;
+    font-size: 20px;
+    font-family: Verdana;
+}
+
+h1{
+    font-family: Impact;
+    color:#DC3E12;
+    font-size: 40px;
+}
+
+p:hover{
+  box-shadow: 0px 0px 15px 1px #FF5E48 inset;
+  -webkit-animation: anim_colorMenu 0.7s infinite alternate;
+  -moz-animation: anim_colorMenu 0.7s infinite alternate;
+  -ms-animation: anim_colorMenu 0.7s infinite alternate;
+  -o-animation: anim_colorMenu 0.7s infinite alternate;
+  animation: anim_colorMenu 0.7s infinite alternate;
+}
+
+@keyframes anim_colorMenu{
+  10% {background-color: #FFDBC4;}
+  20% {background-color: #FFC5AB;}
+  30% {background-color: #FFB69D;}
+  40% {background-color: #FFA99D;}
+  50% {background-color: #FFA194;}
+  60% {background-color: #FF988A;}
+  70% {background-color: #FF8F80;}
+  80% {background-color: #FF8372;}
+  90% {background-color: #FF7865;}
+  100% {background-color: #FF6B56;}
+}
+
+@-webkit-keyframes anim_colorMenu{
+  10% {background-color: #FFDBC4;}
+  20% {background-color: #FFC5AB;}
+  30% {background-color: #FFB69D;}
+  40% {background-color: #FFA99D;}
+  50% {background-color: #FFA194;}
+  60% {background-color: #FF988A;}
+  70% {background-color: #FF8F80;}
+  80% {background-color: #FF8372;}
+  90% {background-color: #FF7865;}
+  100% {background-color: #FF6B56;}
+}
+
+@-moz-keyframes anim_colorMenu{
+  10% {background-color: #FFDBC4;}
+  20% {background-color: #FFC5AB;}
+  30% {background-color: #FFB69D;}
+  40% {background-color: #FFA99D;}
+  50% {background-color: #FFA194;}
+  60% {background-color: #FF988A;}
+  70% {background-color: #FF8F80;}
+  80% {background-color: #FF8372;}
+  90% {background-color: #FF7865;}
+  100% {background-color: #FF6B56;}
+}
+
+@-ms-keyframes anim_colorMenu{
+  10% {background-color: #FFDBC4;}
+  20% {background-color: #FFC5AB;}
+  30% {background-color: #FFB69D;}
+  40% {background-color: #FFA99D;}
+  50% {background-color: #FFA194;}
+  60% {background-color: #FF988A;}
+  70% {background-color: #FF8F80;}
+  80% {background-color: #FF8372;}
+  90% {background-color: #FF7865;}
+  100% {background-color: #FF6B56;}
+}
+
+@-o-keyframes anim_colorMenu{
+  10% {background-color: #FFDBC4;}
+  20% {background-color: #FFC5AB;}
+  30% {background-color: #FFB69D;}
+  40% {background-color: #FFA99D;}
+  50% {background-color: #FFA194;}
+  60% {background-color: #FF988A;}
+  70% {background-color: #FF8F80;}
+  80% {background-color: #FF8372;}
+  90% {background-color: #FF7865;}
+  100% {background-color: #FF6B56;}
+}
