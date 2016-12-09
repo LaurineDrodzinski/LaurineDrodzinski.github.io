@@ -4,19 +4,19 @@
 <!-- EN-TETE ************************************************************************************************************************* -->
 <head>
 
-	<!-- Relie un fichier à celui-ci (ici le fichier contenant toutes les fonctions javascript) -->
+	<!-- Relie un fichier Ã  celui-ci (ici le fichier contenant toutes les fonctions javascript) -->
 	<script src="functionfinal.js" language="javascript" type="text/javascript"></script> 
 
-	<!-- Précise au navigateur que les caractères qu'il rencontrera dans la page seront codés selon la norme de codage «ISO-8859-1» -->
+	<!-- PrÃ©cise au navigateur que les caractÃ¨res qu'il rencontrera dans la page seront codÃ©s selon la norme de codage Â«ISO-8859-1Â» -->
 	<meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1"> 
 	
 	<!-- Titre de la page s'affichant dans l'onglet -->
 	<title>MINI-RPG</title> 
 
-	<!-- CSS définissant la police d'écriture qui sera utilisée dans le jeu -->
+	<!-- CSS dÃ©finissant la police d'Ã©criture qui sera utilisÃ©e dans le jeu -->
 	<style type="text/css"> 
 		@font-face {
-			font-family: 'police'; /*Nom donné à la police*/
+			font-family: 'police'; /*Nom donnÃ© Ã  la police*/
 			src: url('polices/police.ttf'); /*Source de la police*/
 		} 
 	</style>  
@@ -28,52 +28,52 @@
 <body>
 
 	<!-- LEGENDE DES ATTRIBUTS-->
-	<!--• src = source de l'élément
-		• id = nom donné à l'élément
-		• style = endroit où tout ce qui concerne la mise en page sera défini
-			- height = hauteur de l'élément
-			- width = largeur de l'élément
+	<!--â€¢ src = source de l'Ã©lÃ©ment
+		â€¢ id = nom donnÃ© Ã  l'Ã©lÃ©ment
+		â€¢ style = endroit oÃ¹ tout ce qui concerne la mise en page sera dÃ©fini
+			- height = hauteur de l'Ã©lÃ©ment
+			- width = largeur de l'Ã©lÃ©ment
 			- border = bordure
-			- position = type de position (ex: absolute -> l'élément en question ne dépend plus des autres éléments)
-			- left, right, top, bottom = positionnement de l'élément sur la page (lorsqu'il y a un "margin" devant -> marge entre un élément et un autre)
-			- background-... = fond de l'élément (background -> source ; background-size -> taille)
-			- box-shadow = ombre présente sur l'élément (à l'intérieur ; à l'extérieur)
+			- position = type de position (ex: absolute -> l'Ã©lÃ©ment en question ne dÃ©pend plus des autres Ã©lÃ©ments)
+			- left, right, top, bottom = positionnement de l'Ã©lÃ©ment sur la page (lorsqu'il y a un "margin" devant -> marge entre un Ã©lÃ©ment et un autre)
+			- background-... = fond de l'Ã©lÃ©ment (background -> source ; background-size -> taille)
+			- box-shadow = ombre prÃ©sente sur l'Ã©lÃ©ment (Ã  l'intÃ©rieur ; Ã  l'extÃ©rieur)
 			- font-family = choix de la police
 			- font-size = taille de la police
 			- color = couleur de la police
-		• value = texte présent à l'intérieur d'un bouton, d'une zone de saisie...etc
-		• type = type de l'élément (ex: bouton ; zone de saisie...etc)
-		• align = type d'alignement de l'élément
+		â€¢ value = texte prÃ©sent Ã  l'intÃ©rieur d'un bouton, d'une zone de saisie...etc
+		â€¢ type = type de l'Ã©lÃ©ment (ex: bouton ; zone de saisie...etc)
+		â€¢ align = type d'alignement de l'Ã©lÃ©ment
 	-->
 
-	<!-- Zone de dessin où s'affichera le jeu (on appelle cela un "canvas") -->
+	<!-- Zone de dessin oÃ¹ s'affichera le jeu (on appelle cela un "canvas") -->
 	<canvas id="canvas" height="640px" width="960px" style="border:black solid 1px;"></canvas>
 
-	<!-- Zone d'image de la taille du canvas où s'affichera l'image de fin -->
+	<!-- Zone d'image de la taille du canvas oÃ¹ s'affichera l'image de fin -->
 	<img src="imgDecors/end.png" id="imgfin" style="height:640px; width:960px; border:black solid 1px;"></img>
 
-	<!-- Zone d'image où s'affichera le portrait des personnages et d'autres photos -->
+	<!-- Zone d'image oÃ¹ s'affichera le portrait des personnages et d'autres photos -->
 	<img src="" id="photoPortrait" style="position:absolute; height:294px; width:300px; left:990px;"></img>
 
-	<!-- Paragraphe où s'affichera la touche "Entrée" lorsque le héros aura la possibilité d'interagir avec quelque chose, ainsi que le bouton "Rejouer" apparaissant à la fin du jeu-->
+	<!-- Paragraphe oÃ¹ s'affichera la touche "EntrÃ©e" lorsque le hÃ©ros aura la possibilitÃ© d'interagir avec quelque chose, ainsi que le bouton "Rejouer" apparaissant Ã  la fin du jeu-->
 	<p id="p1" style="position:absolute; border:4px black solid; height:55px; width:217px; background:url('imgDecors/fondindication.png'); background-size:217px 55px; box-shadow:0px 2px 13px 2px rgba(0,0,0,2) inset;" align="center">
-		<img id="PhotoEntree" src="imgDecors/void.png" style="height:60px; width:62px; margin-top:-2px;"><!-- Image "Entrée" -->
+		<img id="PhotoEntree" src="imgDecors/void.png" style="height:60px; width:62px; margin-top:-2px;"><!-- Image "EntrÃ©e" -->
 		<input type="button" value="Rejouer" id="btnRejouer" style="margin-top:17px;"><!-- Bouton "Rejouer" -->
 	</p>
 
-	<!-- Paragraphe où s'affichera les dialogues -->
+	<!-- Paragraphe oÃ¹ s'affichera les dialogues -->
 	<p id="p2" style="position:absolute; border:4px black double; height:400px; width:300px; background:url('imgDecors/fondDialogue.png'); background-size:300px 400px; color:white; left:990px; top:300px; font-family:'police'; font-size: 22px;" align="center">
-		<!-- Paragraphe où les zones de saisie concernant la quête <mon nom> s'afficheront -->
+		<!-- Paragraphe oÃ¹ les zones de saisie concernant la quÃªte <mon nom> s'afficheront -->
 		<p id="saisieReponse" style="position:absolute; left:1030px; top:450px;">
 			<input type="text" value="" id="entrerNom" style="width:135px;"><!-- Zone de saisie -->
 			<input type="button" value="Est-ce cela?" id="parlerNom"><!-- Bouton "Parler" -->
 		</p>
 	</p>
 
-	<!-- Paragraphe où se situe l'inventaire du personnage -->
+	<!-- Paragraphe oÃ¹ se situe l'inventaire du personnage -->
 	<p id="p3" style="position:absolute; border:4px black solid; height:55px; width:722px; color:white; left:240px; top:650px; background:url('imgDecors/fondinventaire.png'); background-size:722px 55px">
- 		<img src="imgDecors/void.png"  id="photoBocal" style="height:55px; width:55px; margin-left:5px; "></img> <!-- Emplacement de l'objet "bocal" (objet ramassé durant la quête <mon objet>) -->
- 		<img src="imgDecors/void.png"  id="photoAmbre" style="height:55px; width:55px; margin-left:15px; "></img> <!-- Emplacement de l'objet "ambre" (objet obtenu une fois les deux quêtes terminées) -->
+ 		<img src="imgDecors/void.png"  id="photoBocal" style="height:55px; width:55px; margin-left:5px; "></img> <!-- Emplacement de l'objet "bocal" (objet ramassÃ© durant la quÃªte <mon objet>) -->
+ 		<img src="imgDecors/void.png"  id="photoAmbre" style="height:55px; width:55px; margin-left:15px; "></img> <!-- Emplacement de l'objet "ambre" (objet obtenu une fois les deux quÃªtes terminÃ©es) -->
 	</p>
 
 
@@ -85,22 +85,22 @@
 var canvas = document.getElementById('canvas');
 var ctx = canvas.getContext('2d');
 
-/* Variables concernant la position du héros... */
-var x = 96; //... dans le repère de la carte (à chaque mouvement l'image du héros se déplace de 32px)
+/* Variables concernant la position du hÃ©ros... */
+var x = 96; //... dans le repÃ¨re de la carte (Ã  chaque mouvement l'image du hÃ©ros se dÃ©place de 32px)
 var y = 96;
-var l = 3; //... dans le tableau de la carte (à chaque mouvement le personnage se déplace d'une case)
+var l = 3; //... dans le tableau de la carte (Ã  chaque mouvement le personnage se dÃ©place d'une case)
 var c = 3;
 
-/* Elements cachés au début du jeu */
+/* Elements cachÃ©s au dÃ©but du jeu */
 imgfin.style.display="none";//Image de fin
 btnRejouer.style.display="none";//Bouton "Rejouer"
 p2.style.display="none";
 
-/* Variables concernant l'affichage de la carte, du décor, des personnages */
+/* Variables concernant l'affichage de la carte, du dÃ©cor, des personnages */
 var affichageL;//Lignes
 var affichageC;//Colonnes
 
-/* Images concernant le décor de la carte et les divers objets*/
+/* Images concernant le dÃ©cor de la carte et les divers objets*/
 var carte = new Image();//Image du fond de la carte
 carte.src = "imgDecors/carte.png";
 
@@ -122,16 +122,16 @@ arbre4.src = "imgDecors/arbre4.png";
 var arbre5 = new Image();//Image d'un arbre mort avec une lanterne
 arbre5.src = "imgDecors/arbre5.png";
 
-var portailCim = new Image();//Image du portail du cimetière
+var portailCim = new Image();//Image du portail du cimetiÃ¨re
 portailCim.src = "imgDecors/portailcimetiere.png";
 
 var puit = new Image();//Image du puit
 puit.src = "imgDecors/puit.png";
 
-var statue1 = new Image();//Image des statues des coins en haut à gauche et en bas à droite
+var statue1 = new Image();//Image des statues des coins en haut Ã  gauche et en bas Ã  droite
 statue1.src = "imgDecors/statue1.png";
 
-var statue2 = new Image();//Image de la statue du coin en haut à droite (même que statue1 mais légèrement modifiée pour que la statue puisse apparaitre derrière la barrière)
+var statue2 = new Image();//Image de la statue du coin en haut Ã  droite (mÃªme que statue1 mais lÃ©gÃ¨rement modifiÃ©e pour que la statue puisse apparaitre derriÃ¨re la barriÃ¨re)
 statue2.src = "imgDecors/statue2.png";
 
 var champble = new Image();//Image du champ
@@ -140,10 +140,10 @@ champble.src = "imgDecors/champble.png";
 var paille = new Image();//Image du tas de foin
 paille.src = "imgDecors/bottedepaille.png";
 
-var linge = new Image();//Image de l'étendoir à linge
+var linge = new Image();//Image de l'Ã©tendoir Ã  linge
 linge.src = "imgDecors/linge.png";
 
-var bocal = new Image();//Image du bocal servant à la quête <mon objet>
+var bocal = new Image();//Image du bocal servant Ã  la quÃªte <mon objet>
 bocal.src = "imgItems/bocal.png";
 
 var arbreSansAmbre = new Image();//Image du grand arbre sans la pierre au centre
@@ -155,11 +155,11 @@ arbreAvecAmbre.src = "imgDecors/arbreavecambre.png";
 var portailFin = new Image();//Image du portail de fin
 portailFin.src = "imgDecors/portailfin.png";
 
-var herbe = new Image();//Image d'un carré d'herbe utilisé dans l'affichage de l'ennemi
+var herbe = new Image();//Image d'un carrÃ© d'herbe utilisÃ© dans l'affichage de l'ennemi
 herbe.src= "imgDecors/herbe.png";
 
 
-/*Images et variables concernant l'affichage du héros*/
+/*Images et variables concernant l'affichage du hÃ©ros*/
 var herosface = new Image();
 herosface.src = "imgPersos/herosface.png";
 
@@ -184,7 +184,7 @@ herosdroitepee.src = "imgPersos/herosdroitepee.png";
 var herosgaucheepee = new Image();
 herosgaucheepee.src = "imgPersos/herosgaucheepee.png";
 
-var deplacement=0;//Variable changeant en fonction du mouvement effectué (0=bas 1=haut 2=droite 3=gauche)
+var deplacement=0;//Variable changeant en fonction du mouvement effectuÃ© (0=bas 1=haut 2=droite 3=gauche)
 
 
 /*Images et variables concernant l'affichage de la Mort */
@@ -198,7 +198,7 @@ var pnjmortdroit = new Image();
 pnjmortdroit.src = "imgPersos/mortdroit.png";
 
 
-/*Images et variables concernant l'affichage du fantôme donnant la quête <mon objet> */
+/*Images et variables concernant l'affichage du fantÃ´me donnant la quÃªte <mon objet> */
 var pnjfantomeobjetface = new Image();
 pnjfantomeobjetface.src = "imgPersos/fantomequeteobjetface.png";
 
@@ -212,7 +212,7 @@ var pnjfantomeobjetgauche = new Image();
 pnjfantomeobjetgauche.src = "imgPersos/fantomequeteobjetgauche.png";
 
 
-/*Images et variables concernant l'affichage du fantôme donnant la quête <mon nom> */
+/*Images et variables concernant l'affichage du fantÃ´me donnant la quÃªte <mon nom> */
 var pnjfantomenomface = new Image();
 pnjfantomenomface.src = "imgPersos/Mortefeuface.png";
 
@@ -251,16 +251,16 @@ var ennemiL = 6;//Position de l'ennemi (ligne)
 
 var ennemiC = 12;//Position de l'ennemi (colonne)
 
-var direction = 1;//Sens du déplacement : //si =1 : l'ennemi descend 
+var direction = 1;//Sens du dÃ©placement : //si =1 : l'ennemi descend 
 										  //si =0 : l'ennemi monte
 
 var ennemi = 1; //Vie de l'ennemi : //si =1 : l'ennemi est en vie
                  				    //si =0 : l'ennemi est mort
 
-var disparitionEnnemiFace = new Image();//Ensemble des images utilisées dans la disparition de l'ennemi lorsqu'il est de face
+var disparitionEnnemiFace = new Image();//Ensemble des images utilisÃ©es dans la disparition de l'ennemi lorsqu'il est de face
 disparitionEnnemiFace.src= "imgPersos/spritedisparitionennemiface.png";
 
-var disparitionEnnemiDos = new Image();//Ensemble des images utilisées dans la disparition de l'ennemi lorsqu'il est de dos
+var disparitionEnnemiDos = new Image();//Ensemble des images utilisÃ©es dans la disparition de l'ennemi lorsqu'il est de dos
 disparitionEnnemiDos.src= "imgPersos/spritedisparitionennemidos.png";
 
 
@@ -272,30 +272,30 @@ var ambre=0;
 var varPhoto=0;
 
 
-/*Variable pour l'affichage de la touche "Entrée" (s'affiche lorsque le héros se situe sur une zone dans laquelle on peut interagir) */
-var varEntree=0;//Quand on appuie sur "Entrée" la variable prend la valeur 1, ce qui permet par la suite d'activer certaines fonctions
+/*Variable pour l'affichage de la touche "EntrÃ©e" (s'affiche lorsque le hÃ©ros se situe sur une zone dans laquelle on peut interagir) */
+var varEntree=0;//Quand on appuie sur "EntrÃ©e" la variable prend la valeur 1, ce qui permet par la suite d'activer certaines fonctions
 
 
-/* Variables concernant la quête <mon objet> */
-var varAvancementQueteObjet=0;//si =0: le héros n'a pas encore été voir personnage concerné, il ne peut pas ramasser le bocal tant que la quête <mon objet> n'est pas lancée
-				//si =1: le héros a parlé au personnage concerné, il peut donc ramasser le bocal
-				//si =2: le bocal a été ramassé, le héros peut parler au personnage pour terminer la quête <mon objet>
+/* Variables concernant la quÃªte <mon objet> */
+var varAvancementQueteObjet=0;//si =0: le hÃ©ros n'a pas encore Ã©tÃ© voir personnage concernÃ©, il ne peut pas ramasser le bocal tant que la quÃªte <mon objet> n'est pas lancÃ©e
+				//si =1: le hÃ©ros a parlÃ© au personnage concernÃ©, il peut donc ramasser le bocal
+				//si =2: le bocal a Ã©tÃ© ramassÃ©, le hÃ©ros peut parler au personnage pour terminer la quÃªte <mon objet>
 
 
-/* Variables concernant la quête <mon nom> */
-var varAvancementQueteNom=0; //si =0: le héros n'a pas encore été voir personnage concerné, il ne peut pas lire ce qu'il y a sur les tombes tant que la quête <mon nom> n'est pas lancée
-							 //si =1: le héros a parlé au personnage concerné, il peut donc lire les tombes
-							 //si =2: une des tombes a été lue, le héros peut parler au personnage pour terminer la quête <mon nom> en lui donnant la bonne réponse
-saisieReponse.style.display='none';//cache la zone de saisie et le bouton de la quête <mon nom>
+/* Variables concernant la quÃªte <mon nom> */
+var varAvancementQueteNom=0; //si =0: le hÃ©ros n'a pas encore Ã©tÃ© voir personnage concernÃ©, il ne peut pas lire ce qu'il y a sur les tombes tant que la quÃªte <mon nom> n'est pas lancÃ©e
+							 //si =1: le hÃ©ros a parlÃ© au personnage concernÃ©, il peut donc lire les tombes
+							 //si =2: une des tombes a Ã©tÃ© lue, le hÃ©ros peut parler au personnage pour terminer la quÃªte <mon nom> en lui donnant la bonne rÃ©ponse
+saisieReponse.style.display='none';//cache la zone de saisie et le bouton de la quÃªte <mon nom>
 
 
-/* Quête <la Mort> */
-var varAvancementQueteMort=0;//si =0: aucune quête n'est terminée
-				//si =1: 1 quête terminée
-				//si =2: toutes les quêtes sont terminées
+/* QuÃªte <la Mort> */
+var varAvancementQueteMort=0;//si =0: aucune quÃªte n'est terminÃ©e
+				//si =1: 1 quÃªte terminÃ©e
+				//si =2: toutes les quÃªtes sont terminÃ©es
 
 
-/*TABLEAU DE LA CARTE (découpage du canvas en cases de 32x32 px) */
+/*TABLEAU DE LA CARTE (dÃ©coupage du canvas en cases de 32x32 px) */
 
 	/*LEGENDE*/
 	// 0 = herbe
@@ -303,17 +303,17 @@ var varAvancementQueteMort=0;//si =0: aucune quête n'est terminée
 	// 555 = bocal
 	// 3 = obstacles divers
 	// 30 = puit
-	// 31 = champ de blé
+	// 31 = champ de blÃ©
 	// 32 = botte de paille
-	// 33 = étendoir à linge
+	// 33 = Ã©tendoir Ã  linge
 	// 44 = maisons
-	// 11 = portail du cimetière
+	// 11 = portail du cimetiÃ¨re
 	// 111 , 112 = statues
 	// 55 , 66 , 77 , 88 = personnages non joueur
 	// 5 , 6 , 7 , 8 , 9 , 666 = zones d'interaction
-	// 55 / 5 / 555 -> quête <mon objet>
-	// 66 / 6 -> quête <mon nom>
-	// 77 / 7 -> quête <la Mort>
+	// 55 / 5 / 555 -> quÃªte <mon objet>
+	// 66 / 6 -> quÃªte <mon nom>
+	// 77 / 7 -> quÃªte <la Mort>
 
 tab=[
 		[3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3],				//0
@@ -343,34 +343,34 @@ tab=[
 window.onload = function(){
 	dessinerCarte();//Dessine la carte
 	dessinerPnjObjets();//Dessine les personnages et les objets
-	dessinerherosface();//Dessine le héros
-	dessinerdecors();//Dessine le décor
+	dessinerherosface();//Dessine le hÃ©ros
+	dessinerdecors();//Dessine le dÃ©cor
 	dessinerEnnemi();//Dessine l'ennemi
-	portrait();//Dessine la zone où s'afficheront les portraits
+	portrait();//Dessine la zone oÃ¹ s'afficheront les portraits
 }
 
 
 /*Les fonctions ci-dessous s'activent toutes les X secondes (1000 = 1 seconde)*/
 setInterval("dessinerEnnemi()",320);//Dessine l'ennemi de face
-setInterval("collisionEnnemi()",80);//Teste si le héros se trouve sur l'ennemi
-setInterval("attaquer()",80);//Dessine le héros tenant une épée lorsque l'ennemi passe à côté de lui
+setInterval("collisionEnnemi()",80);//Teste si le hÃ©ros se trouve sur l'ennemi
+setInterval("attaquer()",80);//Dessine le hÃ©ros tenant une Ã©pÃ©e lorsque l'ennemi passe Ã  cÃ´tÃ© de lui
 
 
 /* Quand on appuie sur la touche... */
 document.onkeydown = function(evt) {
 
-	varEntree=0;//Rénitialise la variable varEntree à chaque fois que l'on appuie sur une touche
+	varEntree=0;//RÃ©nitialise la variable varEntree Ã  chaque fois que l'on appuie sur une touche
 
 	switch(evt.keyCode) {
 
-	/* Pour les flèches: haut(y:-32px/l:-1case), bas(y:+32px/l:+1case), gauche(x:-32px/c:-1case), droite(x:+32px/c:+1case) */
+	/* Pour les flÃ¨ches: haut(y:-32px/l:-1case), bas(y:+32px/l:+1case), gauche(x:-32px/c:-1case), droite(x:+32px/c:+1case) */
 
-		case 38: //Flèche du haut: déplacement vers le haut, le héros se déplace donc sur l'axe des ordonnées y (repère carte) et l (tableau  carte)
+		case 38: //FlÃ¨che du haut: dÃ©placement vers le haut, le hÃ©ros se dÃ©place donc sur l'axe des ordonnÃ©es y (repÃ¨re carte) et l (tableau  carte)
 		
-			y=Math.max(0,y-32);//déplacement dans le repère: on enlève 32px à l'emplacement du perso ("y" a pour minimum 0)
-			l=Math.max(0,l-1);//déplacement dans le tableau: on enlève 1 à l (on monte d'une case donc on remonte d'une ligne) ("l" a pour minimum 0)
+			y=Math.max(0,y-32);//dÃ©placement dans le repÃ¨re: on enlÃ¨ve 32px Ã  l'emplacement du perso ("y" a pour minimum 0)
+			l=Math.max(0,l-1);//dÃ©placement dans le tableau: on enlÃ¨ve 1 Ã  l (on monte d'une case donc on remonte d'une ligne) ("l" a pour minimum 0)
 
-			//Indique au héros qu'il ne peut pas se déplacer sur les cases indiquées ci-dessous
+			//Indique au hÃ©ros qu'il ne peut pas se dÃ©placer sur les cases indiquÃ©es ci-dessous
 			if(	tab[l][c]==2  || tab[l][c]==3  || 
 				tab[l][c]==11 || tab[l][c]==20 || 
 				tab[l][c]==21 || tab[l][c]==22 || 
@@ -382,29 +382,29 @@ document.onkeydown = function(evt) {
 				tab[l][c]==77 || tab[l][c]==88 ||
 				tab[l][c]==111||  tab[l][c]==112 ){
 
-				y=Math.min(canvas.height-32,y+32);//annule le déplacement: on ajoute +32px au -32px fait précédement, on obtient donc un déplacement nul
-				l=l+1;//annule le déplacement: on ajoute 1 (case) au -1 fait précédement, on obtient donc un déplacement nul
+				y=Math.min(canvas.height-32,y+32);//annule le dÃ©placement: on ajoute +32px au -32px fait prÃ©cÃ©dement, on obtient donc un dÃ©placement nul
+				l=l+1;//annule le dÃ©placement: on ajoute 1 (case) au -1 fait prÃ©cÃ©dement, on obtient donc un dÃ©placement nul
 			}
 
 			ctx.clearRect(0,0,canvas.width,canvas.height);//Efface le contenu du canvas
 			dessinerCarte();//Dessine la carte
 			dessinerPnjObjets();//Affiche les personnages et les objets
-			dessinerherosdos();//Dessine le héros de dos
-			dessinerdecors();//Dessine le décor
-			varPhoto=0;//Dés que le héros se déplace le portrait s'efface
-			p2.style.display="none";//Dés que le héros se déplace la boîte de dialogue s'efface
-			saisieReponse.style.display="none";//Dés que le héros se déplace la zone de saisie s'efface
+			dessinerherosdos();//Dessine le hÃ©ros de dos
+			dessinerdecors();//Dessine le dÃ©cor
+			varPhoto=0;//DÃ©s que le hÃ©ros se dÃ©place le portrait s'efface
+			p2.style.display="none";//DÃ©s que le hÃ©ros se dÃ©place la boÃ®te de dialogue s'efface
+			saisieReponse.style.display="none";//DÃ©s que le hÃ©ros se dÃ©place la zone de saisie s'efface
 
 		break;
 
 
-		case 40: //Flèche du bas: déplacement vers le bas, le héros se déplace donc sur l'axe des ordonnées y (repère carte) et l (tableau  carte)
+		case 40: //FlÃ¨che du bas: dÃ©placement vers le bas, le hÃ©ros se dÃ©place donc sur l'axe des ordonnÃ©es y (repÃ¨re carte) et l (tableau  carte)
 
-			y=Math.min(canvas.height-32,y+32);//déplacement dans le repère: on ajoute 32px à l'emplacement du perso ("y" a pour maximum la hauteur du canvas moins une case(32)-> pour que le héros n'en sorte pas)
-			l=Math.min(19,l+1);//déplacement dans le tableau: on ajoute 1 à l (on descend d'une case donc on descend d'une ligne) ("l" a pour maximum 19 -> nombre de lignes du tableau)
+			y=Math.min(canvas.height-32,y+32);//dÃ©placement dans le repÃ¨re: on ajoute 32px Ã  l'emplacement du perso ("y" a pour maximum la hauteur du canvas moins une case(32)-> pour que le hÃ©ros n'en sorte pas)
+			l=Math.min(19,l+1);//dÃ©placement dans le tableau: on ajoute 1 Ã  l (on descend d'une case donc on descend d'une ligne) ("l" a pour maximum 19 -> nombre de lignes du tableau)
 
 			
-			//Indique au héros qu'il ne peut pas se déplacer sur les cases indiquées ci-dessous
+			//Indique au hÃ©ros qu'il ne peut pas se dÃ©placer sur les cases indiquÃ©es ci-dessous
 			if(	tab[l][c]==2  || tab[l][c]==3  || 
 				tab[l][c]==11 || tab[l][c]==20 || 
 				tab[l][c]==21 || tab[l][c]==22 || 
@@ -416,29 +416,29 @@ document.onkeydown = function(evt) {
 				tab[l][c]==77 || tab[l][c]==88 ||
 				tab[l][c]==111||  tab[l][c]==112 ){
 				
-				y=Math.max(0,y-32);//annule le déplacement: on soustrait 32px au +32px fait précédement, on obtient donc un déplacement nul
-				l=l-1;//annule le déplacement: on soustrait 1 (case) au +1 fait précédement, on obtient donc un déplacement nul
+				y=Math.max(0,y-32);//annule le dÃ©placement: on soustrait 32px au +32px fait prÃ©cÃ©dement, on obtient donc un dÃ©placement nul
+				l=l-1;//annule le dÃ©placement: on soustrait 1 (case) au +1 fait prÃ©cÃ©dement, on obtient donc un dÃ©placement nul
 			}
 
 			ctx.clearRect(0,0,canvas.width,canvas.height);//Efface le contenu du canvas
 			dessinerCarte();//Dessine la carte
 			dessinerPnjObjets();//Affiche les personnages et les objets
-			dessinerherosface();//Dessine le héros de face
-			dessinerdecors();//Dessine le décor
-			varPhoto=0;//Dés que le héros se déplace le portrait s'efface
-			p2.style.display="none";//Dés que le héros se déplace la boîte de dialogue s'efface
-			saisieReponse.style.display="none";//Dés que le héros se déplace la zone de saisie s'efface
+			dessinerherosface();//Dessine le hÃ©ros de face
+			dessinerdecors();//Dessine le dÃ©cor
+			varPhoto=0;//DÃ©s que le hÃ©ros se dÃ©place le portrait s'efface
+			p2.style.display="none";//DÃ©s que le hÃ©ros se dÃ©place la boÃ®te de dialogue s'efface
+			saisieReponse.style.display="none";//DÃ©s que le hÃ©ros se dÃ©place la zone de saisie s'efface
 
 		break;
 
 
-		case 37: //Flèche gauche: déplacement vers la gauche, le héros se déplace donc sur l'axe des abscisses x (repère carte) et c (tableau  carte)
+		case 37: //FlÃ¨che gauche: dÃ©placement vers la gauche, le hÃ©ros se dÃ©place donc sur l'axe des abscisses x (repÃ¨re carte) et c (tableau  carte)
 
-			x=Math.max(0,x-32);//déplacement dans le repère: on enlève 32px à l'emplacement du perso ("x" a pour minimum 0)
-			c=Math.max(0,c-1);//déplacement dans le tableau: on enlève 1 à c (on se déplace d'une case vers la gauche donc on avance d'une colonne) ("c" a pour minimum 0)
+			x=Math.max(0,x-32);//dÃ©placement dans le repÃ¨re: on enlÃ¨ve 32px Ã  l'emplacement du perso ("x" a pour minimum 0)
+			c=Math.max(0,c-1);//dÃ©placement dans le tableau: on enlÃ¨ve 1 Ã  c (on se dÃ©place d'une case vers la gauche donc on avance d'une colonne) ("c" a pour minimum 0)
 
 			
-			//Indique au héros qu'il ne peut pas se déplacer sur les cases indiquées ci-dessous
+			//Indique au hÃ©ros qu'il ne peut pas se dÃ©placer sur les cases indiquÃ©es ci-dessous
 			if(	tab[l][c]==2  || tab[l][c]==3  || 
 				tab[l][c]==11 || tab[l][c]==20 || 
 				tab[l][c]==21 || tab[l][c]==22 || 
@@ -450,28 +450,28 @@ document.onkeydown = function(evt) {
 				tab[l][c]==77 || tab[l][c]==88 ||
 				tab[l][c]==111||  tab[l][c]==112 ){
 
-				x=Math.min(canvas.width-32,x+32);//annule le déplacement: on ajoute +32px au -32px fait précédement, on obtient donc un déplacement nul
-				c=c+1;//annule le déplacement: on ajoute 1 (case) au -1 fait précédement, on obtient donc un déplacement nul
+				x=Math.min(canvas.width-32,x+32);//annule le dÃ©placement: on ajoute +32px au -32px fait prÃ©cÃ©dement, on obtient donc un dÃ©placement nul
+				c=c+1;//annule le dÃ©placement: on ajoute 1 (case) au -1 fait prÃ©cÃ©dement, on obtient donc un dÃ©placement nul
 			}
 
 			ctx.clearRect(0,0,canvas.width,canvas.height);//Efface le contenu du canvas
 			dessinerCarte();//Dessine la carte
 			dessinerPnjObjets();//Affiche les personnages et les objets
-			dessinerherosgauche();//Dessine le héros de profil gauche
-			dessinerdecors();//Dessine le décor
-			varPhoto=0;//Dés que le héros se déplace le portrait s'efface
-			p2.style.display="none";//Dés que le héros se déplace la boîte de dialogue s'efface
-			saisieReponse.style.display="none";//Dés que le héros se déplace la zone de saisie s'efface
+			dessinerherosgauche();//Dessine le hÃ©ros de profil gauche
+			dessinerdecors();//Dessine le dÃ©cor
+			varPhoto=0;//DÃ©s que le hÃ©ros se dÃ©place le portrait s'efface
+			p2.style.display="none";//DÃ©s que le hÃ©ros se dÃ©place la boÃ®te de dialogue s'efface
+			saisieReponse.style.display="none";//DÃ©s que le hÃ©ros se dÃ©place la zone de saisie s'efface
 
 		break;
 
 
-		case 39: //Flèche droite: déplacement vers la droite, le héros se déplace donc sur l'axe des abscisses x (repère carte) et c (tableau  carte)
+		case 39: //FlÃ¨che droite: dÃ©placement vers la droite, le hÃ©ros se dÃ©place donc sur l'axe des abscisses x (repÃ¨re carte) et c (tableau  carte)
 
-			x=Math.min(canvas.width-32,x+32);//déplacement dans le repère: on ajoute 32px à l'emplacement du perso ("x" a pour maximum la largeur du canvas moins une case(32) -> pour que le héros n'en sorte pas)
-			c=Math.min(29,c+1);//déplacement dans le tableau: on ajoute 1 à c (on se déplace d'une case vers la droite donc on recule d'une colonne) ("c" a pour maximum 29 -> nombre de colonnes du tableau)
+			x=Math.min(canvas.width-32,x+32);//dÃ©placement dans le repÃ¨re: on ajoute 32px Ã  l'emplacement du perso ("x" a pour maximum la largeur du canvas moins une case(32) -> pour que le hÃ©ros n'en sorte pas)
+			c=Math.min(29,c+1);//dÃ©placement dans le tableau: on ajoute 1 Ã  c (on se dÃ©place d'une case vers la droite donc on recule d'une colonne) ("c" a pour maximum 29 -> nombre de colonnes du tableau)
 
-			//Indique au héros qu'il ne peut pas se déplacer sur les cases indiquées ci-dessous
+			//Indique au hÃ©ros qu'il ne peut pas se dÃ©placer sur les cases indiquÃ©es ci-dessous
 			if(	tab[l][c]==2  || tab[l][c]==3  || 
 				tab[l][c]==11 || tab[l][c]==20 || 
 				tab[l][c]==21 || tab[l][c]==22 || 
@@ -483,22 +483,22 @@ document.onkeydown = function(evt) {
 				tab[l][c]==77 || tab[l][c]==88 ||
 				tab[l][c]==111||  tab[l][c]==112 ){
 
-				x=Math.max(0,x-32);//annule le déplacement: on soustrait 32px au +32px fait précédement, on obtient donc un déplacement nul
-				c=c-1;//annule le déplacement: on soustrait 1 (case) au +1 fait précédement, on obtient donc un déplacement nul
+				x=Math.max(0,x-32);//annule le dÃ©placement: on soustrait 32px au +32px fait prÃ©cÃ©dement, on obtient donc un dÃ©placement nul
+				c=c-1;//annule le dÃ©placement: on soustrait 1 (case) au +1 fait prÃ©cÃ©dement, on obtient donc un dÃ©placement nul
 			}
 
 			ctx.clearRect(0,0,canvas.width,canvas.height);//Efface le contenu du canvas
 			dessinerCarte();//Dessine la carte
 			dessinerPnjObjets();//Affiche les personnages et les objets
-			dessinerherosdroit();//Dessine le héros de profil droit
-			dessinerdecors();//Dessine le décor
-			varPhoto=0;//Dés que le héros se déplace le portrait s'efface
-			p2.style.display="none";//Dés que le héros se déplace la boîte de dialogue s'efface
-			saisieReponse.style.display="none";//Dés que le héros se déplace la zone de saisie s'efface
+			dessinerherosdroit();//Dessine le hÃ©ros de profil droit
+			dessinerdecors();//Dessine le dÃ©cor
+			varPhoto=0;//DÃ©s que le hÃ©ros se dÃ©place le portrait s'efface
+			p2.style.display="none";//DÃ©s que le hÃ©ros se dÃ©place la boÃ®te de dialogue s'efface
+			saisieReponse.style.display="none";//DÃ©s que le hÃ©ros se dÃ©place la zone de saisie s'efface
 
 		break;
 
-		case 13://Quand on appuie sur la touche Entrée
+		case 13://Quand on appuie sur la touche EntrÃ©e
 
     	    ctx.clearRect(0,0,canvas.width,canvas.height);//Efface le contenu du canvas
     		dessinerCarte();//Dessine la carte
@@ -506,11 +506,11 @@ document.onkeydown = function(evt) {
 			
 			varEntree=1;//La variable varEntree s'active -> permet l'activation d'autres fonctions
 
-			if(tab[l][c]==5 || tab[l][c]==6 || tab[l][c]==7 || tab[l][c]==8 || tab[l][c]==9 || tab[l][c]==999 || (tab[l][c]==666 && varAvancementQueteNom!=0)){//Si le héros se situe sur une zone d'interaction
-    			p2.style.display='block';//La boîte de dialogue s'affiche
+			if(tab[l][c]==5 || tab[l][c]==6 || tab[l][c]==7 || tab[l][c]==8 || tab[l][c]==9 || tab[l][c]==999 || (tab[l][c]==666 && varAvancementQueteNom!=0)){//Si le hÃ©ros se situe sur une zone d'interaction
+    			p2.style.display='block';//La boÃ®te de dialogue s'affiche
     		}
     		
-    		/*Dessine le héros tenant une épée dès que le joueur appuie sur "Entrée" (si il ne se trouve pas sur une zone incompatible -> autour d'un personnage)*/
+    		/*Dessine le hÃ©ros tenant une Ã©pÃ©e dÃ¨s que le joueur appuie sur "EntrÃ©e" (si il ne se trouve pas sur une zone incompatible -> autour d'un personnage)*/
     		if(tab[l][c]!=5 && tab[l][c]!=6 && tab[l][c]!=7 && tab[l][c]!=8 && tab[l][c]!=9 && tab[l][c]!=666){//S'il n'est pas sur une zone incompatible
 				if(deplacement==0){//Vers la bas
     				ctx.drawImage(herosfaceepee, x+2.5, y+2, 27, 30);
@@ -539,25 +539,25 @@ document.onkeydown = function(evt) {
     			}
     		}
 
-    		dessinerdecors();//Dessine le décor
+    		dessinerdecors();//Dessine le dÃ©cor
 
     	break;
 		
 	}
 
-	//Quête <mon objet> ----------------------------------------------------------------------------------
+	//QuÃªte <mon objet> ----------------------------------------------------------------------------------
 	queteObjet();
 
-	//Quête <mon nom> ------------------------------------------------------------------------------------
+	//QuÃªte <mon nom> ------------------------------------------------------------------------------------
 	queteNom();	
 	
-	//Quête <la Mort> ------------------------------------------------------------------------------------
+	//QuÃªte <la Mort> ------------------------------------------------------------------------------------
 	queteMort();		  		
 		  	
-	//Interaction avec le personnage habillé en bleu -----------------------------------------------------	
+	//Interaction avec le personnage habillÃ© en bleu -----------------------------------------------------	
 	personnageBleu();
 
-	//Quête <grand arbre> --------------------------------------------------------------------------------	
+	//QuÃªte <grand arbre> --------------------------------------------------------------------------------	
 	queteGrandArbre();
 
 	//Fin du jeu -----------------------------------------------------------------------------------------
@@ -569,40 +569,40 @@ document.onkeydown = function(evt) {
 	//Fonction permettant d'attaquer
 	attaquer();
 
-	//Ennemi -> évite les clignotements (disparition et réaparition de l'ennemi) -------------------------
+	//Ennemi -> Ã©vite les clignotements (disparition et rÃ©aparition de l'ennemi) -------------------------
 	if(ennemi==1){//Si l'ennemi est en vie
-		if(direction==1){//Si l'ennemi se déplace vers le bas, le dessiner de face aux bonnes coordonnées
+		if(direction==1){//Si l'ennemi se dÃ©place vers le bas, le dessiner de face aux bonnes coordonnÃ©es
 			ctx.drawImage(ennemiFace, (ennemiC*32)+2, (ennemiL*32), 29, 29);
 		}
-		if(direction==0){//Si l'ennemi se déplace vers le haut, le dessiner de dos aux bonnes coordonnées
+		if(direction==0){//Si l'ennemi se dÃ©place vers le haut, le dessiner de dos aux bonnes coordonnÃ©es
 			ctx.drawImage(ennemiDos, (ennemiC*32)+2, (ennemiL*32), 29, 29);
 		}
 	}
 
-	if(tab[l][c]==5 || tab[l][c]==6 || tab[l][c]==7 || tab[l][c]==8 || (tab[l][c]==666 && varAvancementQueteNom!=0) || tab[l][c]==9 || tab[l][c]==999){//Dés que le héros se situe sur une zone d'interaction la touche "Entrée" apparait
+	if(tab[l][c]==5 || tab[l][c]==6 || tab[l][c]==7 || tab[l][c]==8 || (tab[l][c]==666 && varAvancementQueteNom!=0) || tab[l][c]==9 || tab[l][c]==999){//DÃ©s que le hÃ©ros se situe sur une zone d'interaction la touche "EntrÃ©e" apparait
 		document.getElementById('PhotoEntree').src="imgDecors/entree.png";
-	}else{//Le héros n'est pas sur une zone où il peut interagir
+	}else{//Le hÃ©ros n'est pas sur une zone oÃ¹ il peut interagir
 		document.getElementById('PhotoEntree').src="imgDecors/void.png";	
 	}
 
-	if(varAvancementQueteObjet==3){//Fin de la quête <mon objet>
-		/*La case où se situe le fantôme ainsi que les cases autour de celui-ci prennent comme valeur 0, ce qui fait disparaître le fantôme et les zones d'interaction le concernant */
-   		tab[8][1]=0;//-> fantôme
+	if(varAvancementQueteObjet==3){//Fin de la quÃªte <mon objet>
+		/*La case oÃ¹ se situe le fantÃ´me ainsi que les cases autour de celui-ci prennent comme valeur 0, ce qui fait disparaÃ®tre le fantÃ´me et les zones d'interaction le concernant */
+   		tab[8][1]=0;//-> fantÃ´me
 		tab[9][0]=0;//-> zone d'interaction
 		tab[9][1]=0;//-> zone d'interaction
 		tab[10][1]=0;//-> zone d'interaction
 		tab[9][2]=0;//-> zone d'interaction
    	}
 
-   	if(varAvancementQueteMort==3){//Fin de la quête <la Mort>
-   		/*La case où se situe le fantôme ainsi que les cases autour de celui-ci prennent comme valeur 0, ce qui fait disparaître le fantôme et les zones d'interaction le concernant */
+   	if(varAvancementQueteMort==3){//Fin de la quÃªte <la Mort>
+   		/*La case oÃ¹ se situe le fantÃ´me ainsi que les cases autour de celui-ci prennent comme valeur 0, ce qui fait disparaÃ®tre le fantÃ´me et les zones d'interaction le concernant */
    		tab[11][7]=0;//-> la Mort
     	tab[12][8]=0;//-> zone d'interaction
     	tab[13][7]=0;//-> zone d'interaction
     	tab[12][7]=0;//-> zone d'interaction
   	}
  	
-	portrait();//Affiche ou non un portrait au dessus de la boîte de dialogue
+	portrait();//Affiche ou non un portrait au dessus de la boÃ®te de dialogue
 
 }
 
